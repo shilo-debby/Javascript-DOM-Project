@@ -24,4 +24,3 @@ booklist.innerHTML='<h2>Books and more books...</h2>';
 booklist.innerHTML+='<p>This is how you add HTML</p>';
 console.log(booklist)
 
-
