@@ -20,9 +20,15 @@ addForm.addEventListener('submit',function(e) {
     //giving value to the elements
     bookName.textContent=value;
     deleteBtn.textContent='delete';
+    // adding classes and style
+    bookName.classList.add('name');
+    deleteBtn.classList.add('delete')
     // appending child
     li.appendChild(bookName);
     li.appendChild(deleteBtn);
     list.appendChild(li);
+
 })
+
+
 
