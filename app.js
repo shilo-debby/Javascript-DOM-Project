@@ -25,20 +25,27 @@
 // console.log(booklist)
             // traversing the DOM part 1
 
-const booklist= document.querySelector('#book-list');
+// const booklist= document.querySelector('#book-list');
 
-console.log('the parent node is:',booklist.parentNode);
-console.log('the parent element is:',booklist.parentElement);
-console.log(booklist.children);
+// console.log('the parent node is:',booklist.parentNode);
+// console.log('the parent element is:',booklist.parentElement);
+// console.log(booklist.children);
 
-          // traversing the DOM sibling part 2
-const bookList=document.querySelector('#book-list')
- console.log('book-list next sibling is:',bookList.nextSibling);
-console.log('book-list next element sibling is:',bookList.nextElementSibling);
+//           // traversing the DOM sibling part 2
+// const bookList=document.querySelector('#book-list')
+//  console.log('book-list next sibling is:',bookList.nextSibling);
+// console.log('book-list next element sibling is:',bookList.nextElementSibling);
+// console.log('book-list previous sibling is:', bookList.previousSibling);
+// console.log('book-list previous element sibling is:',bookList.previousElementSibling);
 
+// bookList.previousElementSibling.querySelector('p').innerHTML+='<br/> Too cool for everyone else!';
 
-console.log('book-list previous sibling is:', bookList.previousSibling);
-console.log('book-list previous element sibling is:',bookList.previousElementSibling);
+//EVENTS
 
-bookList.previousElementSibling.querySelector('p').innerHTML+='<br/> Too cool for everyone else!';
-
+const deleteButtons=document.getElementsByClassName('delete');
+Array.from(deleteButtons).forEach(function(button){
+    button.addEventListener('click',function(e){
+        const li = button.parentNode;
+        li.parentNode.removeChild(li)
+    })
+})
