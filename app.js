@@ -1,4 +1,4 @@
-Detele buttons events
+//Detele buttons events
 const list= document.querySelector('#book-list ul');
 list.addEventListener('click',function(e){
     if(e.target.className=='delete') {
@@ -10,7 +10,7 @@ list.addEventListener('click',function(e){
 // Adding a book
 const addForm=document.forms['add-book'];
 
-addForm.addEventListener('submit',function(e) {
+addForm.addEventListener('submit',function(e){
     e.preventDefault();
     const value = document.querySelector('#add-book input').value;
     // create elements
@@ -30,16 +30,29 @@ addForm.addEventListener('submit',function(e) {
 
 })
 
+// hide books
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change', function(e){
+  if(hideBox.checked){
+    list.style.display = "none";
+  } else {
+    list.style.display = "initial";
+  }
+});
+
+//custom search Filter
+const searchBar = document.forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', function(e) {
+    const term = e.target.value.toLowerCase();
+    const books = list.getElementsByTagName('li');
+    Array.from(books).forEach(function(book) {
+        const title = book.firstElementChild.textContent;
+        if (title.toLowerCase().indexOf(term) != -1) {
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none';  
+        }
+    });
+});
 
 
-//checkboxes and change events
-const hideBox=document.querySelector('#hide');
-hideBox.addEventListener('change',function(e){
-if(hideBox.checked){
-list.style.display  ="none"
-}else{
-    list.style.display="initial"
-}
-})
-
-//
