@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="styles.css" rel="stylesheet" />
-    <title>JavaScript DOM Project</title>
+    <title>JavaScript DOM Tutorials</title>
   </head>
   <body>
   	<div id="wrapper">
@@ -25,7 +25,7 @@
 	    		</li>
 	    		<li>
 	    			<span class="name">The Wise Man's Fear</span>
-	    			<span class="delete">delete</span>	
+	    			<span class="delete">delete</span>
 	    		</li>
 	    		<li>
 	    			<span class="name">Kafka on the Shore</span>
@@ -35,16 +35,30 @@
 	    			<span class="name">The Master and the Margarita</span>
 	    			<span class="delete">delete</span>
 	    		</li>
-	    	</ul> 
+	    	</ul>
 	    </div>
 	    <form id="add-book">
-			<!-- <input type="checkbox"id="hide"/>
-			<label for="hide">Hide all books</label> -->
+        <input type="checkbox" id="hide" />
+        <label for="hide">Hide all books</label>
 	    	<input type="text" placeholder="Add a book..." />
 	    	<button>Add</button>
 	    </form>
-
+      <div id="tabbed-content">
+        <ul class="tabs">
+          <li data-target="#about" class="active">About</li>
+          <li data-target="#contact">Contact</li>
+        </ul>
+        <div class="panel active" id="about">
+          <p>Content for about tab...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+        </div>
+        <div class="panel" id="contact">
+          <p>Content for contact tab...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id nunc porta urna ornare rhoncus. Ut convallis ante at.</p>
+        </div>
+      </div>
     </div>
-    <script src="app.js"></script>
+    
   </body>
+  <script src="app.js"></script>
 </html>
